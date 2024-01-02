@@ -1,0 +1,13 @@
+//React.createElement => Object => HTML Element(render)
+
+//JSX - is not HTML inside javascript/ HTML/XML like syntax.
+
+//JSX (Transpiled(converted) before it reaches the JS Engine).
+
+//Transpling is done by PARCEL - it is done by BABEL.
+
+//JSX => React.creatElement => ReactElement - JS Object => HTMLElement(render).
+
+//React Component
+//class based component - old way of writing code(no body is using it now)
+//functional component - new version of codes.
