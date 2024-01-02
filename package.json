@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "This is Namaste Raect By Vijay",
   "scripts": {
-    "start": "rm -rf .parcel-cache && parcel",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
