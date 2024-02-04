@@ -35,11 +35,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-.filter-btn{
-    cursor: pointer;
-    padding: 5px;
-    margin: 10px;
-}
 .head-name{
     margin: 10px 10px ;
 
@@ -62,5 +57,14 @@
     background-color: lightcoral;
     cursor: pointer;
 }
-
-
+.filter{
+    display: flex;
+    padding: 10px;
+}
+.filter-btn{
+    margin-left: 25px;
+    cursor: pointer;
+}
+.search-btn{
+    cursor: pointer;
+}
