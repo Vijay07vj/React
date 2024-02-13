@@ -1,6 +1,7 @@
 #Namaste React
 
 # Parcel
+
 - Dev Build
 - Local Server
 - HMR = Hot Module Replacement
@@ -21,47 +22,46 @@
 
 //Food App
 
-/**
- * header
- * - logo
- * - nav-items
- * Body
- * - Search
- * - RestaurantContainer
- * - RestaurantCard
- *    - Img
- *    - Name of Restaurant, Star Ratings, Cuisines,Delivery ect.
- *    -
- * Footer
- * - CopyRight
- * - Links
- * - Address
- * - Contact
- *
- *
- */
+/\*\*
 
+- header
+- - logo
+- - nav-items
+- Body
+- - Search
+- - RestaurantContainer
+- - RestaurantCard
+- - Img
+- - Name of Restaurant, Star Ratings, Cuisines,Delivery ect.
+- -
+- Footer
+- - CopyRight
+- - Links
+- - Address
+- - Contact
+-
+- \*/
 
 Two Types of Exports & Import
 
-* - Default Export/Import
+- - Default Export/Import
 
-   - export default Component;
-   - import Component from "path;
+  - export default Component;
+  - import Component from "path;
 
-* - Named Export/Import
+- - Named Export/Import
     - export cont Component;
     - import {Component} from "path";
 
-* React Hooks
-   - (Normal Js Utility Functions)
-   - useState()
-   - useEffect()
-
+- React Hooks
+  - (Normal Js Utility Functions)
+  - useState()
+  - useEffect()
 
 ...
-# 2 Types of Routing in the Web Apps 
-  - Client side Routing => It is internal which is called inside the appLayout.
-  - Server side Routing  
-  Making  a Network Calls from the Server.
 
+# 2 Types of Routing in the Web Apps
+
+- Client side Routing => It is internal which is called inside the appLayout.
+- Server side Routing  
+  Making a Network Calls from the Server.

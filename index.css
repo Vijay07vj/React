@@ -1,70 +1,71 @@
-.header{
-    display:flex;
-    justify-content: space-between;
-    border: 1px solid black;
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
 }
-.Logo{
-    width: 100px;
-    margin: 10px;
+.Logo {
+  width: 100px;
+  margin: 10px;
 }
-.nav-items>ul{
-    font-size: 25px;
-    display: flex;
-    list-style: none;
+.nav-items > ul {
+  font-size: 25px;
+  display: flex;
+  list-style: none;
 }
-.nav-items>ul>li{
-    padding: 10px;
-    margin: 10px;
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
 }
 
-.res-card{
-    margin: 5px;
-    padding: 5px;
-    width: 200px;
-    
-    background-color: #f0f0f0;
-}
-.res-card:hover{
-    border: 1px solid black;
-    cursor: pointer;
-}
-.res-image{
-    width: 100%;
-}
-.res-container{
-    display: flex;
-    flex-wrap: wrap;
-}
-.head-name{
-    margin: 10px 10px ;
+.res-card {
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
 
-    
+  background-color: #f0f0f0;
 }
-.shimmer-container{
-    display: flex;
-    flex-wrap: wrap;
+.res-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
-.shimmer-card{
-    background-color: #f0f0f0;
-    margin: 10px;
-    width: 200px;
-    height: 400px;
+.res-image {
+  width: 100%;
 }
-.btn-login{
-    margin: 10px;
-    width: 70px;
-    height: 40px;
-    background-color: lightcoral;
-    cursor: pointer;
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
 }
-.filter{
-    display: flex;
-    padding: 10px;
+.head-name {
+  margin: 10px 10px;
 }
-.filter-btn{
-    margin-left: 25px;
-    cursor: pointer;
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
 }
-.search-btn{
-    cursor: pointer;
+.shimmer-card {
+  background-color: #f0f0f0;
+  margin: 10px;
+  width: 200px;
+  height: 400px;
 }
+.btn-login {
+  margin: 10px;
+  width: 70px;
+  height: 40px;
+  background-color: lightcoral;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+  padding: 10px;
+}
+.filter-btn {
+  margin-left: 25px;
+  cursor: pointer;
+}
+.search-btn {
+  cursor: pointer;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
