@@ -7,8 +7,9 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import Shimmer from "./components/Shimmer.js";
+import UserContext from "./utils/UserContext.js";
 
 //Chunking
 //Code Splitting
@@ -23,11 +24,23 @@ const Grocery = lazy(() => import("./components/Grocery"));
 // Normal CSS, Sass & Sess, chakaraUI, bootstrap, MaterialUI , Ant Design , Today Trending- TailWind CSS
 
 const AppLayout = () => {
+  //Authentication
+  const [userName, setUserName] = useState();
+  useEffect(() => {
+    //Make API call and send username and password
+    const data = {
+      name: "Vijay",
+    };
+    setUserName(data.name);
+  }, []);
   return (
-    <div className="App">
-      <Header />
-      <Outlet />
-    </div>
+    // Default Value
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="App">
+          <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 const appRouter = createBrowserRouter([

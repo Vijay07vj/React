@@ -12,3 +12,23 @@
 
 //class based component - old way of writing code(no body is using it now)
 //functional component - new version of codes.
+
+// Spread Operator :The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+// Lifting the State Up:Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up, and it’s one of the most common things you will do writing React code.
+
+// Controlled And Uncontrolled Component:
+
+// Props Drilling:Usually, you will pass information from a parent component to a child component via props. But passing props can become verbose and inconvenient if you have to pass them through many components in the middle, or if many components in your app need the same information. Context lets the parent component make some information available to any component in the tree below it—no matter how deep—without passing it explicitly through props.
+
+// There many ways to avoid props drilling: One among the them is React Context.
+
+// React Context : LevelContext, Since its for the Heading Level.
+
+// UserContext.provider
+
+// import { createContext } from 'react';
+// export const LevelContext = createContext(1);
+
+// <usercontext.provider> - want to read about it.
+// we can use the context in the lazy loading page also thats the power of the context

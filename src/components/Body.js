@@ -1,14 +1,19 @@
-import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { APP_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [list, setList] = useState([]);
+  // console.log(list);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
   //whenever state variable update , react triggers a reconciliation cycle(rerenders the component)
   useEffect(() => {
     fetchData();
@@ -37,6 +42,8 @@ const Body = () => {
         Looks Like You're Offline!!! , Please Check your Internet Connection.
       </h1>
     );
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return list.length == 0 ? (
     <Shimmer />
@@ -73,14 +80,25 @@ const Body = () => {
         >
           Top Rated
         </button>
+        <label className="ml-20 ">UserName : </label>
+        <input
+          className="border border-black rounded-lg p-[4px] "
+          value={loggedInUser}
+          onChange={(e) => {
+            setUserName(e.target.value);
+          }}
+        ></input>
       </div>
+
       <div className="flex flex-wrap ml-[10px] space-x-3 space-y-3 overflow-visible">
-        {filteredRestaurant.map((restaurant) => (
-          <Link
-            key={restaurant.info.id}
-            to={"/restaurant/" + restaurant.info.id}
-          >
-            <RestaurantCard resData={restaurant} />
+        {filteredRestaurant.map((res) => (
+          <Link key={res.info.id} to={"/restaurant/" + res.info.id}>
+            {/* if the restaurant has aggregate discount info then add a discount label to it.   */}
+            {res.info.aggregatedDiscountInfoV3 ? (
+              <RestaurantCardPromoted resData={res} />
+            ) : (
+              <RestaurantCard resData={res} />
+            )}
           </Link>
         ))}
       </div>

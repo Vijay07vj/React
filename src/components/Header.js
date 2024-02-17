@@ -1,8 +1,9 @@
 import { LOGO_URL } from "../utils/constants";
 import Logo from "../image/Logo.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -14,6 +15,8 @@ const Header = () => {
   //   console.log("useEffect called");
   // },[btnName])
   const OnlineStatus = useOnlineStatus();
+  const { loggedInUser } = useContext(UserContext);
+  // console.log(loggedInUser);
   let statusIndicator;
   if (OnlineStatus) {
     statusIndicator = "✅";
@@ -49,6 +52,9 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <li className="px-3 py-1 transform hover:scale-125">Cart</li>
+          <li className="px-3 py-1 transform hover:scale-125">
+            {loggedInUser}
+          </li>
           <button
             className="px-3 py-1 m-4 rounded-lg mr-4 bg-red-200 hover:bg-green-400"
             onClick={() =>
