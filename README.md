@@ -65,3 +65,10 @@ Two Types of Exports & Import
 - Client side Routing => It is internal which is called inside the appLayout.
 - Server side Routing  
   Making a Network Calls from the Server.
+#Redux ToolKit
+    - Install @reduxjs/toolkit and react-redux
+    - Build Our Store
+    - Connect Our store to our app
+    - Slice(cartSlice)
+    - dispactAction
+    -  Selector
