@@ -12,8 +12,8 @@ const RestaurantMenu = () => {
   // const [resInfo,setResInfo] = useState(null);
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  // console.log(resInfo);
   const [showIndex, setShowIndex] = useState(null);
-  // console.log(params)
 
   // useEffect (()=>{
   //     fetchMenu();
@@ -32,25 +32,16 @@ const RestaurantMenu = () => {
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
 
-  let itemCards;
-  if (resInfo.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards) {
-    for (let card of resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards) {
-      if (card?.card?.card?.itemCards) {
-        itemCards = card.card.card.itemCards;
-        break;
-      }
-    }
-  }
-  // console.log(resInfo?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+  const { itemCards } =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  // console.log(resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   const categories =
     resInfo?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (x) =>
         x.card?.["card"]?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  // console.log(categories);
 
-  // console.log(itemCards);
   return (
     <div className="text-center">
       <h1 className="font-bold text-xl pb-[10px]">{name}</h1>

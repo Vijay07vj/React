@@ -1,9 +1,9 @@
-import { LOGO_URL } from "../utils/constants";
 import Logo from "../image/Logo.png";
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -16,6 +16,8 @@ const Header = () => {
   // },[btnName])
   const OnlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
   // console.log(loggedInUser);
   let statusIndicator;
   if (OnlineStatus) {
@@ -31,7 +33,7 @@ const Header = () => {
           <img className="w-28 pt-[10px] hover:scale-110" src={Logo}></img>
         </Link>
 
-        <h3 className=" py-4 font-bold text-slate-700">CHENNAI'S RETRO</h3>
+        <h3 className=" py-4 font-bold text-slate-700">CHENNAI'S RESTO</h3>
       </div>
       <div className="flex items-center ">
         <ul className="flex items-center text-[18px] space-x-5 pr-3">
@@ -51,7 +53,9 @@ const Header = () => {
           <li className="px-3 py-1 transform hover:scale-125">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-3 py-1 transform hover:scale-125">Cart</li>
+          <li className="px-3 py-1 transform hover:scale-125">
+            <Link to="/cart">🛒[{cartItems.length}]</Link>
+          </li>
           <li className="px-3 py-1 transform hover:scale-125">
             {loggedInUser}
           </li>

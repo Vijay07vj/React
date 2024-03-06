@@ -32,3 +32,8 @@
 
 // <usercontext.provider> - want to read about it.
 // we can use the context in the lazy loading page also thats the power of the context
+// Interview Points
+// Whenever using selector subscribe to the right portion of the store .
+// If not selecting the right portion it will be a huge performance losss.
+// Home Work
+// Read about RTK Query

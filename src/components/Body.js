@@ -18,6 +18,17 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  /*//pass any url that you wish to access to fetch()    
+let response = await fetch(url);
+if (response.ok) { // if HTTP-status is 200-299
+    // get the response body 
+    let json = await response.json();
+    console.log(json)
+}
+else {
+    console.log("HTTP-Error: " + response.status);
+}
+ */
 
   const fetchData = async () => {
     const data = await fetch(APP_URL);
@@ -80,9 +91,9 @@ const Body = () => {
         >
           Top Rated
         </button>
-        <label className="ml-20 ">UserName : </label>
+        <label className="ml-20 ">UserName :</label>
         <input
-          className="border border-black rounded-lg p-[4px] "
+          className="border border-black rounded-lg p-[4px] ml-1 "
           value={loggedInUser}
           onChange={(e) => {
             setUserName(e.target.value);
