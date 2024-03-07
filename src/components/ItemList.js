@@ -13,7 +13,7 @@ const ItemList = (props) => {
   return (
     <div>
       {item.map((i) => (
-        <div
+        <div data-testid="foodItems"
           key={i?.card?.info?.id}
           className="p-2 m-2 border-gray-300 border-b-2 text-left flex justify-between"
         >

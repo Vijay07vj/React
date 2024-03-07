@@ -1,4 +1,4 @@
-import Logo from "../image/Logo.png";
+// import Logo from "../image/Logo.png";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -30,7 +30,7 @@ const Header = () => {
     <div className="flex justify-between bg-yellow-50 shadow-xl m-3">
       <div className="Logo-container">
         <Link to="/">
-          <img className="w-28 pt-[10px] hover:scale-110" src={Logo}></img>
+          {/* <img className="w-28 pt-[10px] hover:scale-110" src={Logo}></img> */}
         </Link>
 
         <h3 className=" py-4 font-bold text-slate-700">CHENNAI'S RESTO</h3>

@@ -14,8 +14,12 @@ const RestaurantCard = (props) => {
     sla,
     aggregatedDiscountInfoV3,
   } = resData?.info;
+  // console.log(resData);
   return (
-    <div className="p-[5px] w-[275px] m-[5px] bg-gray-200 rounded-xl object-cover transition-transform transform hover:scale-110">
+    <div
+      data-testid="resCard"
+      className="p-[5px] w-[275px] m-[5px] bg-gray-200 rounded-xl object-cover transition-transform transform hover:scale-110"
+    >
       <img
         className="rounded-xl"
         alt="res-logo"
@@ -40,7 +44,10 @@ export const withPromotedLabel = (RestaurantCard) => {
     const { header, subHeader } = resData?.info?.aggregatedDiscountInfoV3;
     return (
       <div>
-        <label className="text-gray-800 font-bold mx-4 pt-4">
+        <label
+          data-testid="promoLabel"
+          className="text-gray-800 font-bold mx-4 pt-4"
+        >
           {header} {subHeader} 👇
         </label>
         <RestaurantCard {...props} />
