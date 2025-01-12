@@ -37,3 +37,142 @@
 // If not selecting the right portion it will be a huge performance losss.
 // Home Work
 // Read about RTK Query
+
+// Redux is seperate library , used for state management and it is not mandatory. And use redux wisely . A predictable state container for JS Apps.
+
+// Zustand is another library for state management.
+
+// Uses of redux
+
+// - when we are using a large scale application redux offer wide range of solutions.
+// - Redux offers easy debugging
+
+// Redux devtools use to debugg the applications
+
+// React Redux - It act as the bridge between react and the redux. Older Version
+// Redux Toolkit - Newer way of writing redux. It is also know as RTK
+
+// older version is called vanilla redux
+
+// Managing the data of our application.
+
+// Redux store is a very big java script object with the lots of data inside it and kept in the global central place.
+
+// Lots of data in redux is not a problem . since we do have slice(Splited  Data) in redux store.
+
+// Cart Slice, User Slice etc
+
+// Cart Slice Initially the cart slice is empty.
+
+// Write the data in redux.
+// when we click add button, it dipatch an action and calls a function and function internally modify the cart. and update the slice of the redux store
+// The function used is called the reducer function.
+
+// TO Read the data from the store.
+
+// Selector- We will use the selector to read the data from the store and this selector modify the component.
+// Using Selector phenomenon is known as subscribing to the store.
+
+// Component Subscribed to the store using the Selector.
+
+// How to build Redux the Store in our Project
+
+// Steps 1:
+
+// npm i @reduxjs/toolkit
+// npm i react-redux
+
+// Step 2 :
+
+// 1. Create appStore.js in utilis Folder.
+// 2. In appStore.js
+// import {configurestore} from @reduxjs/toolkit
+//     const appStore =configureStore({
+// 		reducer : {
+// 		cart : cartReducer  }
+// });
+// export default  appStore;
+
+// The Configure Store will give the store of the react application
+// Step 3 :
+
+// Now we will Add(Provide) the store to our application.
+// so in App.js
+// import {Provider} from "react-redux"
+// return (
+// <Provider store={appStore}>
+// <Header />
+// <Body />
+// <Footer />
+// <Provider />
+// )
+// Here Store= {AppStore} is passed as the props.
+
+// Were ever we need to use the store we should wrap the component insdie the provider.
+//  We can keep seperate folder for redux store.But We are keeping it in the utils.
+
+// Step 4 :
+// We need to create a cart Slice in utils crtSlice.js
+
+// import {createSlice} form "@redux/toolkit"
+// const cartslice = createSlice({
+//   		name : 'cart'
+// 		initialState : {
+// 			items : []
+// 			},
+// 		reducers :{
+// 			addItem : (state, action) =>{
+// 				state.items.push(action.payload)
+// 				},
+// 			removeItem : (state) =>{
+// 				state.items.pop()
+// 				}
+// 			clearCart : (state) =>{
+// 				state.length=0
+// }
+// 			 }
+// });
+
+// export const { addItem, removeItem, clearCart } = cartSlice.actions;
+// export default cartSlice.reducer;
+
+//  //addItem - it is the dispatch action in the diagram
+// // () =>{} - it is the reducer function in diagram
+// //The reducer function modifies the silce of the store.It get access to the state and the action in the store
+
+// Here the cart slice is the function, it takes a configuration
+// reducer is again an action.
+// Actions - Add an Item , Remove an Item.
+// Action is small api to communicate with redux store
+
+// Now we should import andd add the reducers in the app store.
+
+// reducer : {
+// 		cart : cartReducer  }
+
+// here the whole big reducer is the app reducer. it contains the small small reducer of the app.
+
+// TO add an item onclicking the button we need to dispatch an action.
+// to use dispatch  we need to import it form react-redux
+
+// import {useDispatch} from "react-redux";
+// import {addItem} from "../utils/cartsSlice"
+// const dispatch = useDispatch();
+
+// handleAddItem = ()=>{
+// 		dispatch(addItem("Idly"))
+// // here the Idly is the action.payload
+// 			}
+
+// These are the steps to write the data inside the redux store.
+
+// To Read the Data from the redux store we need to use Selector. Which gives the access to the store.
+
+// So in the Header.js
+
+// we use use Selector Hook.
+// Selector basicaly helps us to identify what portion of the code we need to have
+
+// const cartItems = useSelector((store)=>{store.cart.items})
+
+// in the jsx we need provide the {cartItems} .these are the steps to read the data from the store
